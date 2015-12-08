@@ -1,0 +1,55 @@
+---
+title: "Learning R"
+author: "Ioannis Baltopoulos"
+date: "8 December 2015"
+output: html_document
+---
+
+### R-Studio keyboard shortcuts
+
+#### Navigation
+<kbd>CTRL</kbd>+<kbd>1</kbd>: Move cursor to Document pane
+
+<kbd>CTRL</kbd>+<kbd>2</kbd>: Move cursor to Console pane
+
+
+#### In Console window
+<kbd>CTRL</kbd>+<kbd>L</kbd>: Clear the console window
+
+<kbd>CTRL</kbd>+<kbd>Up</kbd>: Pop up command history
+
+<kbd>ESC</kbd>: Interrupt the currently executing command
+
+
+#### In Document window
+<kbd>CTRL</kbd>+<kbd>Enter</kbd>: Run the current line/selection
+
+<kbd>ALT</kbd>+<kbd>Enter</kbd>: Run the current line/selection and retain cursor position
+
+<kbd>ALT</kbd>+<kbd>L</kbd>: Fold selected
+
+<kbd>SHIFT</kbd>+<kbd>ALT</kbd>+<kbd>O</kbd>: Unfold all
+
+#### Build
+<kbd>CTRL</kbd>+<kbd>Shift</kbd>+<kbd>K</kbd>: Knit the current markdown file
+
+<kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>R</kbd>: Run the current document
+
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+summary(cars)
+```
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+$y(x) = f(x)$
