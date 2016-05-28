@@ -1,9 +1,9 @@
 ---
 title: "Learning R"
 author: "Ioannis Baltopoulos"
-date: "8 December 2015"
 output: html_document
 ---
+`r format(Sys.Date(), "%d %B %Y")`
 
 ### R-Studio keyboard shortcuts
 
@@ -36,6 +36,11 @@ output: html_document
 <kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>R</kbd>: Run the current document
 
 
+### R-Studio exploring the workspace
+`ls()` gives you information about the objects in the environment
+`ls.str()` gives details about the objects in the environment
+
+
 ### R basics
 
 #### Assignment
@@ -45,8 +50,56 @@ NOTE, there are some scoping rules relating to the equals sign.
 
 The most common one is the left assignment operator, and right arrow assignment is rarely used.
 
-```{r}
 
+#### Basic arithmetic and basic operations
+`sqrt(x)` is the square root of the number. 
+
+R can deal with complex numbers natively.
+```{r}
+y <- 3 + 2i
+Re(y)
+Im(y)
+y * y
+```
+
+#### Modes
+Each variable in R is of a particular mode that denotes the storage class. You can check the mode using `mode`. The 3 basic types are *numeric*, *character* and *logical*.
+
+Vectors must be homogeneous, but lists, matrics and data frames can be heterogeneous.
+
+`dim` is used to check the dimensions of a matrix.
+`c(...)` is the combine function used to create vectors?
+`list(...)` is the constructor for lists
+`1:10` creates a sequence of numbers from 1 to 10. The `c(1:10)` around the sequency is redundant but might be useful for clarity.
+
+#### Sequences of numbers
+You can create a sequence of numbers in several ways:
+* `1:10` creates a sequence from 1 to 10
+* `seq(10)`
+* `c(1:10)`
+* `rep(1,10)` repeats 1 ten times.
+
+#### Vectors
+The basic data type used in R. Vectors must be homogeneous. They are created using the combine operator `c()`. Vectors have a `mode(x)` and a `length(x)`. 
+
+##### Addition
+When the two vectors have the same length, adding is their point-wise addition.
+
+```{r}
+x <- c(1:10)
+y <- c(1:10)
+x + y
+```
+
+If however one vector is shorter than the other one, the smaller vector gets *recycled* to complete the length of larger vector. When the longer one is an exact multiple of the shorter one, this is done quietly without any warning. If the shorter one is not an exact multiple you receive a warning from R.
+
+```{r}
+x <- c(1:10)
+y <- c(1:2)
+x + y
+
+y <- c(1:3)
+x + y
 ```
 
 
