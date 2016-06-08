@@ -72,6 +72,16 @@ Vectors must be homogeneous, but lists, matrics and data frames can be heterogen
   * `list(...)` is the constructor for lists
   * `1:10` creates a sequence of numbers from 1 to 10. The `c(1:10)` around the sequency is redundant but might be useful for clarity.
 
+### Basic data types
+**Integer**
+
+**Complex**
+
+**Logical**
+
+**Character**
+
+
 #### Sequences of numbers
 You can create a sequence of numbers in several ways:
 
