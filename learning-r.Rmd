@@ -1,7 +1,15 @@
 ---
 title: "Learning R"
 author: "Ioannis Baltopoulos"
-output: html_document
+output: 
+  html_document:
+    toc: true
+    number_sections: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    code_folding: hide
+
 ---
 `r format(Sys.Date(), "%d %B %Y")`
 
@@ -41,6 +49,32 @@ output: html_document
 `ls.str()` gives details about the objects in the environment
 
 
+### Expressions
+Mathematical expressions 
+
+
+
+R is a tool for
+**Data manipulation**
+* connecting to data sources (files, databases, web, rObjects)
+* slicing and dicing data
+**Modeling and computation**
+* statistical modeling
+* numerical simulation
+**Data visualisation**
+* visualizing the fit of models
+* composing statistical graphics
+
+There is R and RStudio
+
+
+
+
+
+
+
+
+
 ### R basics
 
 #### Assignment
@@ -54,6 +88,38 @@ The most common one is the left assignment operator, and right arrow assignment 
 #### Basic arithmetic and basic operations
 `sqrt(x)` is the square root of the number. 
 
+
+
+#### Modes
+Each variable in R is of a particular mode that denotes the storage class. You can check the mode using `mode`. The 3 basic types are *numeric*, *character* and *logical*.
+
+
+### Basic data types
+`class()` reveals the data type of a variable. 
+
+**Logical**
+Logical data type is used to represent booleans. `TRUE` and `FALSE` are logical variables and can be abbreviated to `T` or `F` but that is discouraged. The not avaiable `NA` value is also a logical.
+
+```{r}
+class(TRUE)
+class(FALSE)
+class(NA)
+```
+
+**Numerics**
+Any number is of numeric type.
+
+**Integer**
+The integer is a special case of a numeric type and is used to represent natural numbers. To specify that a number is an integer you add a capital `L` after them.
+
+You usually don't see the difference from the R console output. But you can see the difference if you use the `class()` function.
+
+```{r}
+class(2)
+class(2L)
+```
+
+**Complex**
 R can deal with complex numbers natively.
 ```{r}
 y <- 3 + 2i
@@ -62,24 +128,37 @@ Im(y)
 y * y
 ```
 
-#### Modes
-Each variable in R is of a particular mode that denotes the storage class. You can check the mode using `mode`. The 3 basic types are *numeric*, *character* and *logical*.
 
+
+**Character**
+
+The class 
+
+
+#### Ways to find the type of a variable
+`is.*`
+
+```{r}
+is.numeric(2l)
+is.integer()
+```
+
+
+#### Ways to convert variables from one type to another
+`as.*`
+
+
+
+
+
+#### Vectors
+The basic data type used in R. Vectors must be homogeneous. They are created using the combine operator `c()`. Vectors have a `mode(x)` and a `length(x)`. 
 Vectors must be homogeneous, but lists, matrics and data frames can be heterogeneous.
 
   * `dim` is used to check the dimensions of a matrix.
   * `c(...)` is the combine function used to create vectors?
   * `list(...)` is the constructor for lists
   * `1:10` creates a sequence of numbers from 1 to 10. The `c(1:10)` around the sequency is redundant but might be useful for clarity.
-
-### Basic data types
-**Integer**
-
-**Complex**
-
-**Logical**
-
-**Character**
 
 
 #### Sequences of numbers
@@ -92,9 +171,6 @@ You can create a sequence of numbers in several ways:
   * `seq(2,8)` numbers from 2 to 8 with an increment of 1
   * `seq(2,8, 0.5)` numbers from 2 to 8 with an increment 0.5
 
-
-#### Vectors
-The basic data type used in R. Vectors must be homogeneous. They are created using the combine operator `c()`. Vectors have a `mode(x)` and a `length(x)`. 
 
 ##### Manipulating vectors
 **Adding elements to a vector**
@@ -179,9 +255,18 @@ sum(x * y)
 
 
 
+### Functions
+#### Defining functions
+**Optional arguments** 
+**Return call or expression**
+
+#### Calling functions
 
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+#### Appendix
+A MATLAB to R reference: http://www.math.umaine.edu/~hiebeler/comp/matlabR.pdf
+
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
